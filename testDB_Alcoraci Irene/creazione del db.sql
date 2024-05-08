@@ -1,0 +1,45 @@
+-- Alcoraci Irene
+CREATE DATABASE esercizio_db;
+USE esercizio_db;
+
+CREATE TABLE IF NOT EXISTS ruolo (
+  ID_R INT PRIMARY KEY AUTO_INCREMENT,
+  tipologia ENUM('Utente', 'Admir', 'Docente') NOT NULL 
+); 
+
+CREATE TABLE IF NOT EXISTS utente (
+  ID_U INT PRIMARY KEY AUTO_INCREMENT,
+  nome VARCHAR(255) NOT NULL,
+  cognome VARCHAR(255) NOT NULL,
+  email VARCHAR(255) DEFAULT '' NOT NULL,
+  PassWord VARCHAR(255) UNIQUE NOT NULL 
+);
+
+CREATE TABLE IF NOT EXISTS utente_ruolo (
+  FK_R INT NOT NULL,
+  FK_U INT NOT NULL,
+  FOREIGN KEY (FK_R) REFERENCES ruolo(ID_R),
+  FOREIGN KEY (FK_U) REFERENCES utente(ID_U)  
+); 
+
+CREATE TABLE IF NOT EXISTS corso (
+  ID_C INT PRIMARY KEY AUTO_INCREMENT,
+  nome_corso VARCHAR(255) NOT NULL,
+  descrizione_breve VARCHAR(255) NOT NULL,
+  descrizione_completa TEXT DEFAULT '' NOT NULL,
+  durata INT NOT NULL,
+  FK_CA INT NOT NULL,
+  FOREIGN KEY (FK_CA) REFERENCES categoria(ID_CA)
+);
+
+CREATE TABLE IF NOT EXISTS utenti_corsi (
+  FK_UC INT NOT NULL,
+  FK_CU INT NOT NULL,
+  FOREIGN KEY (FK_UC) REFERENCES utente(ID_U),
+  FOREIGN KEY (FK_CU) REFERENCES corso(ID_C)  
+); 
+
+CREATE TABLE IF NOT EXISTS categoria (
+  ID_CA INT PRIMARY KEY AUTO_INCREMENT,
+  nome_categoria ENUM('FrontEnd', 'BackEnd', 'FullStack', 'Cybersecurity') NOT NULL 
+);
