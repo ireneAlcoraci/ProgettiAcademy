@@ -11,6 +11,7 @@ import jakarta.ws.rs.ApplicationPath;
 public class JerseyConfig extends ResourceConfig{
 	
 	public JerseyConfig() {
+		register(CorsFilter.class);
 		register(JWTTokenNeededFilter.class);
 		packages("it.corso");
 		

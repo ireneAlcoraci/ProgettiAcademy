@@ -14,4 +14,5 @@ public interface CategoriaService {
 	void createCategoria(CategoriaCreazioneDto categoriaCreazioneDto);
 	void updatecategoria(CategoriaAggiornamenoDto categoriaDto);
 	void deleteCategoria(int id);
+
 }

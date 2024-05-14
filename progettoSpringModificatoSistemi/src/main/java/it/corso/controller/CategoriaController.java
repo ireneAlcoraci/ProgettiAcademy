@@ -89,7 +89,7 @@ public class CategoriaController {
 	@DELETE
 	@Path("/{id}")
 	@Consumes(MediaType.APPLICATION_JSON)
-	public Response eliminaUtente(@PathParam(value = "id") int id) {
+	public Response eliminaCategoria(@PathParam(value = "id") int id) {
 		
 		try {
 			categoriaService.deleteCategoria(id);

@@ -23,6 +23,7 @@ import it.corso.dto.UtenteDto;
 import it.corso.dto.UtenteLoginRequestDto;
 import it.corso.dto.UtenteLoginResponceDto;
 import it.corso.dto.UtenteRegistrazioneDto;
+import it.corso.jwt.JWTTokenNeeded;
 import it.corso.model.Ruolo;
 import it.corso.model.Utente;
 import it.corso.service.BlackListService;
@@ -216,6 +217,7 @@ public class UtenteController {
 	
 	@GET
 	@Path("/logout")
+	@JWTTokenNeeded
 	public Response logoutUtente(ContainerRequestContext requestContext) {
 		try {
 			String authorizationHeader = requestContext.getHeaderString(HttpHeaders.AUTHORIZATION);
