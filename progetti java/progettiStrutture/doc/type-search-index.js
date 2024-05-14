@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"All Classes and Interfaces","u":"allclasses-index.html"},{"p":"it.corso.ElencoTelefonico","l":"Contatto"},{"p":"it.corso.ElencoTelefonico","l":"ContattoLavoro"},{"p":"it.corso.ElencoTelefonico","l":"ContattoPersonale"},{"p":"it.corso.ElencoTelefonico","l":"GestioneElencoTelefonico"},{"p":"it.corso.ElencoTelefonico","l":"Main"}];updateSearchResults();
